@@ -7,7 +7,7 @@ class Artifact(models.Model):
     text = models.CharField(max_length=200)
     info = models.TextField(blank = True)
     discovered_by = models.CharField(max_length=200, default="unknown")
-    pub_date = models.DateTimeField('Date Published', default=datetime.datetime.now)
+    pub_date = models.DateField('Date Published', default=datetime.date.today)
     image = models.ImageField(upload_to = 'artifacts/uploads', default = 'artifacts/uploads/qmark.png')
 
     def __str__(self):
