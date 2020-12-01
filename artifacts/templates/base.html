@@ -4,15 +4,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="{% static 'polls/app.css' %}">
+        <link rel="stylesheet" href="{% static 'artifacts/app.css' %}">
         {% block css %} {% endblock %}
         <title>{% block title %}{% endblock %}</title>
     </head>
     <body>
-        <ul class="navbar">
-            <li>Home</li>
-            <li>About</li>
-        </ul>
+        <nav class="navbar">
+            <h1>Terrifying Totems</h1>
+            <a href="{% url 'artifacts' %}">Home</a>
+            <a>About</a>
+        </nav>
         {% block content %}{% endblock %}
     </body>
 </html>
