@@ -8,6 +8,7 @@ class Artifact(models.Model):
     info = models.TextField(blank = True)
     discovered_by = models.CharField(max_length=200, default="unknown")
     pub_date = models.DateTimeField('Date Published', default=datetime.datetime.now)
+    image = models.ImageField(upload_to = 'artifacts/uploads', default = 'artifacts/uploads/qmark.png')
 
     def __str__(self):
         return f'{self.text} : {self.info[:25]}...'

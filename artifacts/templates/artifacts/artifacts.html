@@ -5,6 +5,7 @@
 <img src="{% static 'artifacts/scary.jpg' %}">
 <h1>Artifacts</h1>
 {% for a in artifacts %}
-    {{ a.text }}
+    
+    {{ a.text }} <img class="a-image" src="{{ a.image }}">
 {% endfor %}
 {% endblock %}
