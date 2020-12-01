@@ -17,7 +17,8 @@ def location_info(request, location_id):
     return HttpResponse("Location info")
 
 def discovered_year(request, year):
-    return HttpResponse("Year Discovered")
+    artifacts = Artifact.objects.filter(pub_date__year=year)
+    return render(request, "artifacts/artifacts.html", {"artifacts": artifacts})
 
 def discovered_year_month(request, year, month):
     return HttpResponse("Year/Month Discovered")
