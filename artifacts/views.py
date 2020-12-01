@@ -1,13 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Artifact
 
 # Create your views here.
 
 def artifacts(request):
-    return HttpResponse("Artifact Page")
+    artifacts = Artifact.objects.all()
+    arts = ", ".join([a.text for a in artifacts])
+    return HttpResponse(arts)
 
 def artifact_info(request, artifact_id):
-    return HttpResponse("Detail Page")
+    a = Artifact.objects.get(pk=artifact_id)
+    return HttpResponse(a.info)
 
 def locations(request):
     return HttpResponse("Location Page")
