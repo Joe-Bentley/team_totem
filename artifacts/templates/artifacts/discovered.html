@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Totems{% endblock %}
+{% block content %}
+
+    {{ artifact.discovered_by }}
+    {{ artifact.pub_date }}
+    {{ artifact.info }}
+    {% for location in artifact.location_set.all %}
+        <h1>Date found: {{ location.text }}</h1>
+    {% endfor %}
+
+{% endblock %}
