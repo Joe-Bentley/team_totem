@@ -6,8 +6,7 @@ from .models import Artifact
 
 def artifacts(request):
     artifacts = Artifact.objects.all()
-    arts = ", ".join([a.text for a in artifacts])
-    return HttpResponse(arts)
+    return render(request, "artifacts/artifacts.html", {"artifacts": artifacts})
 
 def artifact_info(request, artifact_id):
     a = Artifact.objects.get(pk=artifact_id)
