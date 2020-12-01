@@ -2,7 +2,9 @@
 {% load static %}
 {% block title %}Totems{% endblock %}
 {% block content %}
-<img src="{% static 'polls/scary.jpg' %}">
+<img src="{% static 'artifacts/scary.jpg' %}">
 <h1>Artifacts</h1>
-
+{% for a in artifacts %}
+    {{ a.text }}
+{% endfor %}
 {% endblock %}
