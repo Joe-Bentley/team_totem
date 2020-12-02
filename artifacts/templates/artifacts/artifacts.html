@@ -2,16 +2,14 @@
 {% load static %}
 {% block title %}Totems{% endblock %}
 {% block content %}
-<img src="{% static 'artifacts/scary.jpg' %}">
 <h1 class="title">Artifacts</h1>
-<ul>
-{% for a in artifacts %}
-    
-    <li>
-        <a href="{% url 'artifact_info' a.id %}">{{ a.text }}</a> 
-        <img class="a-image" src="{{ a.image }}">
-    </li>
-
-{% endfor %}
-</ul>
+<div class="imgs-container">
+    {% for a in artifacts %}
+        
+        <div class="imgs-row">
+            <a href="{% url 'artifact_info' a.id %}">{{ a.text }}</a> 
+            <img class="looped-img" src="{{ a.image }}">
+        </div>
+    {% endfor %}
+    </div>    
 {% endblock %}
