@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Shared Location{% endblock %}
+{% block content %}
+
+    <h1>Shared Locations</h1>
+    {% for artifact in artifacts %}
+            {{ artifact.text }}<br>
+        {% for location in artifact.location_set.all %}
+                {{ location.text }}
+        {% endfor %}
+            
+        {% empty %}
+            <h2>No shared locations</h2>
+    {% endfor %}
+{% endblock %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Artifact
+from .models import Artifact, Location
 
 
 def artifacts(request):
@@ -11,10 +11,17 @@ def artifact_info(request, artifact_id):
     return render(request, "artifacts/singleartifact.html", {"artifact": Artifact.objects.get(pk=artifact_id)})
 
 def locations(request):
-    return HttpResponse("Location Page")
+    locations = Location.objects.all()
+    return render(request, "artifacts/locations.html", {"locations": locations})
 
 def location_info(request, location_id):
-    return HttpResponse("Location info")
+    shared_location = Location.objects.get(pk=location_id)
+    all_artifacts = Artifact.objects.filter(location = shared_location)
+    return render (
+        request, 
+        "artifacts/singlelocation.html", 
+        {"artifacts": all_artifacts}
+    )
 
 def discovered_year(request, year):
     artifacts = Artifact.objects.filter(pub_date__year=year)
