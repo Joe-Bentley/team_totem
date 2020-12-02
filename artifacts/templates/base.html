@@ -10,9 +10,8 @@
     </head>
     <body>
         <nav class="navbar">
-            <h1>Terrifying Totems</h1>
-            <a href="{% url 'artifacts' %}">Home</a>
-            <a>About</a>
+            <a class="navbar-item" href="{% url 'artifacts' %}">Home</a>
+            <a class="navbar-item">About</a>
         </nav>
         {% block content %}{% endblock %}
     </body>
