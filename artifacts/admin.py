@@ -13,3 +13,4 @@ class ArtifactAdmin(admin.ModelAdmin):
     inlines = [LocationInLine]
 
 admin.site.register(Artifact, ArtifactAdmin)
+admin.site.register(Location)
