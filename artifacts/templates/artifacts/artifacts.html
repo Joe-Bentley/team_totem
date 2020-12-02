@@ -3,15 +3,15 @@
 {% block title %}Totems{% endblock %}
 {% block content %}
 
-<h1>Artifacts</h1>
-<ul>
-{% for a in artifacts %}
-    
-    <li>
-        <a href="{% url 'artifact_info' a.id %}">{{ a.text }}</a> 
-        <img class="a-image" src="{{ a.image }}">
-    </li>
+<h1 class="title">Artifacts</h1>
+<div class="imgs-container">
+    {% for a in artifacts %}
+        
+        <div class="imgs-row">
+            <a href="{% url 'artifact_info' a.id %}">{{ a.text }}</a> 
+            <img class="looped-img" src="{{ a.image }}">
+        </div>
+    {% endfor %}
+    </div>    
 
-{% endfor %}
-</ul>
 {% endblock %}
