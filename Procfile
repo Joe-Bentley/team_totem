@@ -1,0 +1,1 @@
+web: gunicorn totems.wsgi --log-file -
