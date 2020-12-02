@@ -126,3 +126,5 @@ dmypy.json
 #interpreter
 
 .vscode
+
+artifacts/uploads

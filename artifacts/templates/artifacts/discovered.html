@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% block css %} 
+<link rel="stylesheet" href="{% static 'artifacts/app.css' %}">
+{% endblock %}
 {% block title %}Discovery{% endblock %}
 {% block content %}
     <h1>Discovered {{ date }}</h1>
