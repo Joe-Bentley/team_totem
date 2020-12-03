@@ -5,11 +5,21 @@
 {% endblock %}
 {% block title %}Locations{% endblock %}
 {% block content %}
-    <h1>All Locations</h1>
+<h1 class="title" >Locations</h1>
+<div class="imgs-container">
     {% for location in locations %}
-        <h1><a href="{% url 'location_info' location.id %}">{{ location.text }}</a></h1>
-        <img src="http://{{host_prefix}}/{{ location.image }}"><br>
+        <div class="box">
+            <div class="img-box">
+                <img class="looped-img" src="http://{{host_prefix}}/{{ location.image }}">
+            </div>
+            <div class="details">
+                <div class="content">
+                    <a href="{% url 'location_info' location.id %}">{{ location.text }}</a>
+                </div>
+            </div>
+        </div>
         {% empty %}
-        <h2>No Locations</h2>
+            <h2>No Locations</h2>
     {% endfor %}
+</div>
 {% endblock %}
