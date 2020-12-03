@@ -10,10 +10,8 @@
         {% for artifact in artifacts %}
             <li>{{ artifact.discovered_by }}</li>
             <li>{{ artifact.pub_date }}</li>
-            <li>{{ artifact.info }}</li>
-            {% for location in artifact.location_set.all %}
-                <li>{{ location.text }}</li>
-            {% endfor %}
+            <li>{{ artifact.info }}</li>            
+            <li>{{ artifact.location.text }}</li>            
         {% empty %}
             <h2>Nothing Discovered</h2>
         {% endfor %}

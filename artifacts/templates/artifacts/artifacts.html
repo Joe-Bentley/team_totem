@@ -6,16 +6,16 @@
 
 <h1 class="title">Artifacts</h1>
 <div class="imgs-container">
-    {% for a in artifacts %}
+    {% for artifact in artifacts %}
         
             <div class="imgs-row">
                 <div class="box">
                     <div class="img-box">
-                        <img class="looped-img" src="{{ a.image }}">
+                        <img class="looped-img" src="{{ artifact.image }}">
                     </div>
                     <div class="details">
                         <div class="content">
-                            <a href="{% url 'artifact_info' a.id %}">{{ a.text }}</a>
+                            <a href="{% url 'artifact_info' artifact.id %}">{{ artifact.text }}</a>
                         </div>
                     </div>
                 </div>

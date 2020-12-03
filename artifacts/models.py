@@ -3,7 +3,15 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+class Location(models.Model):
+    image = models.ImageField(upload_to = 'artifacts/uploads', default = 'artifacts/uploads/qmark.png')    
+    text = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.text
+
 class Artifact(models.Model):
+    location = models.ForeignKey(Location, on_delete=models.CASCADE, default = 1)
     text = models.CharField(max_length=200)
     info = models.TextField(blank = True)
     discovered_by = models.CharField(max_length=200, default="unknown")
@@ -12,10 +20,3 @@ class Artifact(models.Model):
 
     def __str__(self):
         return f'{self.text} : {self.info[:25]}...'
-
-class Location(models.Model):
-    artifact = models.ForeignKey(Artifact, on_delete=models.CASCADE)
-    text = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.text

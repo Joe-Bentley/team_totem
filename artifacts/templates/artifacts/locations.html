@@ -8,9 +8,8 @@
 
     <h1>All Locations</h1>
     {% for location in locations %}
-            {{ location.artifact.text }}
-            {{ location.text }} <br>
+    <a href="{% url 'location_info' location.id %}">{{ location.text }}</a> <img src="http://{{host_prefix}}/{{ location.image }}"><br>
         {% empty %}
-            <h2>Nothing Discovered</h2>
+            <h2>No Locations</h2>
     {% endfor %}
 {% endblock %}
