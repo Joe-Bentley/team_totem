@@ -51,10 +51,7 @@ body {
     width: 80vw;
     min-height: 50vh;
     margin: 60px auto 60px;
-    background: white;
 }
-
-.img-row
 
 .looped-img {
     margin: 2%;
@@ -149,7 +146,24 @@ body {
 @media only screen 
     and (min-device-width: 768px) 
     and (max-device-width: 1024px)  {
-        
+        .title {
+            font-size: 5em;
+            /* margin: 0% 10% 0% 10%; */
+        }
+        .navbar {
+            width: 79vw;
+        }
+        .looped-img {
+            margin: 3%;
+            width: 100%;
+            height: auto;
+            max-height: 22vh;
+            min-height: 22vh;
+        }
+        .imgs-container {
+            min-height: 65vh;
+            margin: 70px 70px 70px 70px;
+        }
 }
 
 /* About Page */
