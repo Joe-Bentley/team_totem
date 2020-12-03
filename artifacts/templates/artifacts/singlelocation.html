@@ -6,8 +6,9 @@
 {% block title %}Shared Location{% endblock %}
 {% block content %}
 
-    <h1>All artifact in: {{location.text}}</h1>
+    
     <img src="http://{{host_prefix}}/{{ location.image }}">
+    <h1>All artifacts in: {{location.text}}</h1>
     <ul>
         {% for artifact in artifacts %}
                 <li><a href="{% url 'artifact_info' artifact.id %}">{{ artifact.text }}</a></li>                      
