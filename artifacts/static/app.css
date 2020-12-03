@@ -48,15 +48,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 70vw;
+    width: 80vw;
     min-height: 50vh;
     margin: 60px auto 60px;
-}
-
-.imgs-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    background: white;
 }
 
 .looped-img {
