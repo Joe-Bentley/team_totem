@@ -169,12 +169,14 @@ body {
 /* About Page */
 
 .about-container {
-    background-color: #ccc;
+    background-color: rgba(204, 204, 204, 0.527);
     position: relative;
+    box-shadow: 0 10px 10px black;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 2%;
     padding-bottom: 1%;
+    font-family: 'Jost' sans-serif;
 }
 
 .about-content {
