@@ -127,6 +127,6 @@ dmypy.json
 
 .vscode
 
-env.txt
-
 artifacts/uploads
+
+env.txt
