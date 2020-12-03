@@ -11,7 +11,7 @@
     <body>
         <nav class="navbar">
             <a class="navbar-item" href="{% url 'artifacts' %}">Home</a>
-            <a class="navbar-item">About</a>
+            <a class="navbar-item" href="{% url 'about' %}">About</a>
             <a class="navbar-item" href="{% url 'locations' %}">Locations</a>
         </nav>
         {% block content %}{% endblock %}
