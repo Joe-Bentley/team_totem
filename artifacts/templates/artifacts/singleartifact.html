@@ -9,9 +9,9 @@
     {{ artifact.discovered_by }}
     {{ artifact.pub_date }}
     {{ artifact.info }}
-    {% for location in artifact.location_set.all %}
-        <h1>Found in: {{ location.text }}</h1>
-    {% endfor %}
+    
+        <a href="{% url 'location_info' artifact.location.id %}">Found in: {{ artifact.location.text }}</a>
+    
     
 
 {% endblock %}

@@ -6,11 +6,12 @@ admin.site.site_header = "Awesome Artifacts"
 admin.site.site_title = "Totem Admin Area"
 admin.site.index_title = "Welcome to the Totem Admin Area"
 
-class LocationInLine(admin.TabularInline):
-    model = Location
+class ArtifactInLine(admin.TabularInline):
+    model = Artifact
 
-class ArtifactAdmin(admin.ModelAdmin):
-    inlines = [LocationInLine]
+class LocationAdmin(admin.ModelAdmin):
+    inlines = [ArtifactInLine]
 
-admin.site.register(Artifact, ArtifactAdmin)
-admin.site.register(Location)
+admin.site.register(Artifact)
+
+admin.site.register(Location, LocationAdmin)

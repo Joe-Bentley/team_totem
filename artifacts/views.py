@@ -8,12 +8,11 @@ def artifacts(request):
     return render(request, "artifacts/artifacts.html", {"artifacts": artifacts})
 
 def artifact_info(request, artifact_id):
-    print (request.get_host())
     return render(request, "artifacts/singleartifact.html", {"artifact": Artifact.objects.get(pk=artifact_id), "host_prefix": request.get_host()})
 
 def locations(request):
     locations = Location.objects.all()
-    return render(request, "artifacts/locations.html", {"locations": locations})
+    return render(request, "artifacts/locations.html", {"locations": locations, "host_prefix": request.get_host()})
 
 def location_info(request, location_id):
     shared_location = Location.objects.get(pk=location_id)
@@ -21,7 +20,7 @@ def location_info(request, location_id):
     return render (
         request, 
         "artifacts/singlelocation.html", 
-        {"artifacts": all_artifacts}
+        {"artifacts": all_artifacts, "location": shared_location, "host_prefix": request.get_host()} 
     )
 
 def discovered_year(request, year):
