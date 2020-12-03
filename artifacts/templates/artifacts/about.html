@@ -1,10 +1,66 @@
-{% extends "base.html" %}
-{% load static %}
-{% block css %} 
-<link rel="stylesheet" href="{% static 'artifacts/app.css' %}">
-{% endblock %}
-{% block title %}About{% endblock %}
-{% block content %}
-        <h1>Test</h1>
+{% extends "base.html" %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'artifacts/app.css' %}" />
+{% endblock %} {% block title %}About{% endblock %} {% block content %}
+<div class="about-container">
+  <div class="about-content">
+    <div class="about-question">
+      <input id="q0" type="checkbox" class="panel" />
+      <label for="q0" class="panel-title"> About this site? </label>
+      <div class="panel-content">
+        <p>
+          This website was created as a project as part of the CodeNation Master
+          course. The goal of this project was to use Python, Html, CSS, and
+          Django to create a database holding information about our chosen topic
+          - Artifacts. Throughout the site you will be able to see information
+          about; individual artifacts including, where it is stored, who
+          discovered the artifact and when the artifact was found, you will also
+          be able to look at all artifacts stored in the same location and all
+          artifacts discovered in the same year.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="imgs-container">
+  <div class="imgs-row">
+    <div class="box">
+      <div class="img-box">
+        <img class="looped-img" src="/artifacts/uploads/joe.jpg" />
+      </div>
+      <div class="details">
+        <div class="content">
+          <h3>Joe</h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="imgs-row">
+        <div class="box">
+          <div class="img-box">
+            <img class="looped-img" src="/artifacts/uploads/maddy.png" />
+          </div>
+          <div class="details">
+            <div class="content">
+              <h3>Maddy</h3>
+              <p>Hey my name is Maddy and i did some code</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="imgs-row">
+        <div class="box">
+          <div class="img-box">
+            <img class="looped-img" src="/artifacts/uploads/katie.jpg" />
+          </div>
+          <div class="details">
+            <div class="content">
+              <h3>Katie</h3>
+              <p>Hey my name is Katie and i did some code</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
 {% endblock %}
