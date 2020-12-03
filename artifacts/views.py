@@ -31,6 +31,9 @@ def discovered_year(request, year):
         {"artifacts": artifacts, "date": year}
     )
 
+def about(request):
+    return render (request, "artifacts/about.html")
+
 def discovered_year_month(request, year, month):
     return HttpResponse("Year/Month Discovered")
 
