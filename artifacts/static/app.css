@@ -53,6 +53,12 @@ body {
     margin: 60px auto 60px;
 }
 
+.imgs-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .looped-img {
     margin: 2%;
     width: 100%;
