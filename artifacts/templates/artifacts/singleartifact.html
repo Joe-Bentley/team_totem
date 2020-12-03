@@ -5,13 +5,12 @@
 {% endblock %}
 {% block title %}Artifact{% endblock %}
 {% block content %}
+    <h1>{{ artifact.text }}</h1>
     <img class="looped-img" src="http://{{host_prefix}}/{{ artifact.image }}">
-    {{ artifact.discovered_by }}
-    {{ artifact.pub_date }}
-    {{ artifact.info }}
-    
-        <a href="{% url 'location_info' artifact.location.id %}">Found in: {{ artifact.location.text }}</a>
-    
-    
-
+    <ul>
+        <li>Discovered by: {{ artifact.discovered_by }}</li>
+        <li>Found in: <a href="{% url 'discovered_year' artifact.pub_date.year %}">{{ artifact.pub_date }}</a></li>
+        <li>Stored in: <a href="{% url 'location_info' artifact.location.id %}"> {{ artifact.location.text }}</a></li>
+        <li>History: {{ artifact.info }}</li>   
+    </ul>   
 {% endblock %}

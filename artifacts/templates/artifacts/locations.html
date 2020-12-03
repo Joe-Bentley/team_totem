@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
-{% block css %} 
+{% block css %}
 <link rel="stylesheet" href="{% static 'artifacts/app.css' %}">
 {% endblock %}
 {% block title %}Locations{% endblock %}
 {% block content %}
-
     <h1>All Locations</h1>
     {% for location in locations %}
-    <a href="{% url 'location_info' location.id %}">{{ location.text }}</a> <img src="http://{{host_prefix}}/{{ location.image }}"><br>
+        <h1><a href="{% url 'location_info' location.id %}">{{ location.text }}</a></h1>
+        <img src="http://{{host_prefix}}/{{ location.image }}"><br>
         {% empty %}
-            <h2>No Locations</h2>
+        <h2>No Locations</h2>
     {% endfor %}
 {% endblock %}
