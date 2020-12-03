@@ -23,7 +23,7 @@ body {
 }
 
 .navbar-item {
-    width: 33%;
+    width: 50%;
     margin: 1.75%;
     list-style-type: none;
     font-family: "Open Sans", sans-serif;
@@ -48,10 +48,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 70vw;
+    width: 80vw;
     min-height: 50vh;
     margin: 60px auto 60px;
+    background: white;
 }
+
+.img-row
 
 .looped-img {
     margin: 2%;
@@ -148,5 +151,3 @@ body {
     and (max-device-width: 1024px)  {
         
 }
-
-
