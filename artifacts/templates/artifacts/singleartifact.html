@@ -1,18 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
-{% block css %} 
+{% block css %}
 <link rel="stylesheet" href="{% static 'artifacts/app.css' %}">
 {% endblock %}
 {% block title %}Artifact{% endblock %}
 {% block content %}
-    <h1 class="title">{{ artifact.text }}</h1>
-    <img class="single_artifact" src="http://{{host_prefix}}/{{ artifact.image }}">
-    <div class="contains">
-        <ul>
-            <li>Discovered by: {{ artifact.discovered_by }}</li>
-            <li>Found in: <a href="{% url 'discovered_year' artifact.pub_date.year %}">{{ artifact.pub_date }}</a></li>
-            <li>Stored in: <a href="{% url 'location_info' artifact.location.id %}"> {{ artifact.location.text }}</a></li>
-            <li>History: {{ artifact.info }}</li>   
-        </ul>
-    </div>    
+<h1 class="title">{{ artifact.text }}</h1>
+<img class="single_artifact" src="http://{{host_prefix}}/{{ artifact.image }}">
+<div class="contains">
+    <ul>
+        <li>Discovered by: {{ artifact.discovered_by }}</li>
+        <br>
+        <li>Found in: <a href="{% url 'discovered_year' artifact.pub_date.year %}">{{ artifact.pub_date }}</a></li>
+        <br>
+        <li>Stored in: <a href="{% url 'location_info' artifact.location.id %}"> {{ artifact.location.text }}</a></li>
+        <br>
+        <li>History: {{ artifact.info }}</li>
+    </ul>
+</div>
 {% endblock %}

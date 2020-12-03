@@ -1,25 +1,28 @@
 {% extends "base.html" %}
 {% load static %}
-{% block css %} 
+{% block css %}
 <link rel="stylesheet" href="{% static 'artifacts/app.css' %}">
 {% endblock %}
 {% block title %}Discovery{% endblock %}
 {% block content %}
-    <h1 class="title">Discovered in {{ date }}</h1>
-    <div class="contains">
-        <ul>
-            {% for artifact in artifacts %}
-                <a href="{% url 'artifact_info' artifact.id %}">
-                    <li>Discovered by: {{ artifact.discovered_by }}</li>
-                    <li>Found in: {{ artifact.pub_date }}</li>
-                    <li>Stored in: {{ artifact.info }}</li>
-                </a>            
-                <a href="{% url 'location_info' artifact.location.id %}">
-                    <li>History: {{ artifact.location.text }}</li>
-                </a>            
-            {% empty %}
-                <h2>Nothing Discovered</h2>
-            {% endfor %}
-        </ul>
-    </div>
+<h1 class="title">Discovered in {{ date }}</h1>
+<div class="contains">
+    <ul>
+        {% for artifact in artifacts %}
+        <a href="{% url 'artifact_info' artifact.id %}">
+            <li>Discovered by: {{ artifact.discovered_by }}</li>
+            <br>
+            <li>Found in: {{ artifact.pub_date }}</li>
+            <br>
+            <a href="{% url 'location_info' artifact.location.id %}">
+                <li>Stored in: {{ artifact.location.text }}</li>
+            </a>
+            <br>
+            <li>History: {{ artifact.info }}</li>
+        </a>
+        {% empty %}
+        <h2>Nothing Discovered</h2>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

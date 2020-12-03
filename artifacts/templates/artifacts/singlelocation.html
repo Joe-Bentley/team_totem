@@ -1,21 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
-{% block css %} 
+{% block css %}
 <link rel="stylesheet" href="{% static 'artifacts/app.css' %}">
 {% endblock %}
 {% block title %}Shared Location{% endblock %}
 {% block content %}
 
-    <h1 class="title">All artifacts in: {{location.text}}</h1>
-    <img class="single_artifact" src="http://{{host_prefix}}/{{ location.image }}">
-    
-    <div class="contains">
-        <ul>
-            {% for artifact in artifacts %}
-                    <li><a href="{% url 'artifact_info' artifact.id %}">{{ artifact.text }}</a></li>                      
-            {% empty %}
-                    <h2>No shared locations</h2>
-            {% endfor %}
-        </ul>
-    </div>
+<h2 class="title-extra">All artifacts in: {{location.text}}</h2>
+<img class="single_artifact" src="http://{{host_prefix}}/{{ location.image }}">
+
+<div class="contains">
+    <ul>
+        {% for artifact in artifacts %}
+        <li><a href="{% url 'artifact_info' artifact.id %}">{{ artifact.text }}</a></li>
+        {% empty %}
+        <h2>No shared locations</h2>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}
