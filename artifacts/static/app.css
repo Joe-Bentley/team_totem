@@ -23,7 +23,7 @@ body {
 }
 
 .navbar-item {
-    width: 33%;
+    width: 50%;
     margin: 1.75%;
     list-style-type: none;
     font-family: "Open Sans", sans-serif;
@@ -151,5 +151,3 @@ body {
     and (max-device-width: 1024px)  {
         
 }
-
-
