@@ -1,6 +1,8 @@
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
 
 html, body {
     min-height: 100%;
@@ -13,7 +15,20 @@ body {
     padding: 0;
     margin: 0;
 }
-
+/* Links */
+a:link {
+    color: rgb(156, 151, 151);
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visted:active {
+    color: black;
+}
+a:hover {
+    color: rgb(91, 71, 107);
+    text-decoration: underline;
+}
+/* Navbar */
 .navbar {
     margin: 0;
     background-color: #1d1a13;
@@ -30,6 +45,7 @@ body {
     font-family: "Open Sans", sans-serif;
     font-size: 1.35em;
     text-align: center;
+    color: white;
 }
 
 .navbar-item, a:visited {
@@ -37,6 +53,7 @@ body {
     text-decoration: none;
 }
 
+/* Titles */
 .title {
     color: #d00000;
     font-family: 'Nosifer', cursive;
@@ -45,6 +62,14 @@ body {
     margin: 0;
 }
 
+.title-extra{
+    color: #d00000;
+    font-family: 'Nosifer', cursive;
+    font-size: 6em;
+    text-align: center;
+    margin: 0;
+}
+/* Main page images */
 .imgs-container {
     display: flex;
     flex-wrap: wrap;
@@ -66,8 +91,7 @@ body {
     position: relative;
     width: 300px;
     height: 300px;
-    /* background-color: #d00000; */
-    margin: 10px;
+    margin: 3%;
     box-sizing: border-box;
     display: inline-block;
 }
@@ -167,12 +191,15 @@ body {
 /* About Page */
 
 .about-container {
-    background-color: #ccc;
+    font-family: "Jost", sans-serif;
+    background-color: rgba(204, 204, 204, 0.527);
     position: relative;
+    box-shadow: 0 10px 10px black;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 2%;
     padding-bottom: 1%;
+    font-family: 'Jost' sans-serif;
 }
 
 .about-content {
@@ -185,7 +212,7 @@ body {
 }
 
 .panel-title {
-    font-size: 24px;
+    font-size: 26px;
     width: 100%;
     position: relative;
     margin: 0;
@@ -194,7 +221,8 @@ body {
     cursor: pointer;
   }
 
-  .panel-content {
+.panel-content {
+    font-family: 'Jost' sans-serif;
     font-size: 20px;
     padding: 0px 14px;
     margin: 0 40px;
@@ -208,14 +236,62 @@ body {
     -moz-transition: .4s ease;
     -o-transition: .4s ease;
     transition: .4s ease;
-  }
+}
 
-  .panel:checked ~ .panel-content{
+.panel:checked ~ .panel-content{
     height: auto;
     opacity: 1;
     padding: 14px;
-  }
+}
 
-  .panel {
+.panel {
     display: none;
-  }
+}
+
+/* Textbox under images */
+.single_artifact{
+    width: 50%;
+    position: relative;
+    left: 25%;
+}
+
+.contains {
+    margin-top: 1%;
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    height: 20%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    list-style: none;
+}
+  
+.contains:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .2);
+    filter: blur(5px);
+}
+
+.contains ul {
+    padding-left: 0px;
+    padding: 1%;
+}
+
+.contains li {
+    color: white;
+    text-align: center;
+    list-style: none;
+    font-size: 25px;
+    font-family: "Jost", sans-serif;
+}
+
+
+   

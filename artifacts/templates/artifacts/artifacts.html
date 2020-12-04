@@ -4,19 +4,20 @@
 {% block title %}Totems{% endblock %}
 {% block content %}
 
-<h1 class="title">Artifacts</h1>
+<h1 class="title">The Artifacts</h1>
+<h2 class="title-extra">ENTER IF YOU DARE</h2>
 <div class="imgs-container">
-    {% for artifact in artifacts %}        
-                <div class="box">
-                    <div class="img-box">
-                        <img class="looped-img" src="{{ artifact.image }}">
-                    </div>
-                    <div class="details">
-                        <div class="content">
-                            <a href="{% url 'artifact_info' artifact.id %}">{{ artifact.text }}</a>
-                        </div>
-                </div>
+    {% for artifact in artifacts %}     
+    <div class="box">
+        <div class="img-box">
+            <img class="looped-img" src="{{ artifact.image }}">
+        </div>
+        <div class="details">
+            <div class="content">
+                <a href="{% url 'artifact_info' artifact.id %}">{{ artifact.text }}</a>
             </div>
-    {% endfor %}   
+        </div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
