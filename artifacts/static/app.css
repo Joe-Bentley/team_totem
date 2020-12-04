@@ -20,10 +20,11 @@ body {
     color: #d00000;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .navbar-item {
-    width: 50%;
+    width: 33.33%;
     margin: 1.75%;
     list-style-type: none;
     font-family: "Open Sans", sans-serif;
@@ -48,17 +49,17 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80vw;
-    min-height: 50vh;
-    margin: 60px auto 60px;
+    width: 80%;
+    min-height: 50%;
+    margin: 5% auto 5%;
 }
 
 .looped-img {
     margin: 2%;
     width: 100%;
     height: auto;
-    max-height: 40vh;
-    min-height: 40vh;
+    max-height: 280px;
+    min-height: 280px;
 }
 
 .imgs-container .box {
@@ -149,9 +150,6 @@ body {
         .title {
             font-size: 5em;
             /* margin: 0% 10% 0% 10%; */
-        }
-        .navbar {
-            width: 79vw;
         }
         .looped-img {
             margin: 3%;
